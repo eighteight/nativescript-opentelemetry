@@ -1,0 +1,16 @@
+:: На компьютере с Windows должно быть установлено Окружение и Git
+:: и запущен эмулятор андроид устройства
+:: 1. Переименовать данный файл в shell-script.bat
+:: 2. Запустить файл shell-script.bat
+:: Я запускал из-под Far Manager, рабтало. Двойным кликом из папки - выдавало ошибки
+:: Во время тестирования у меня в приложении не открывался сайт https://www.genotek.ru/
+:: выдавало ошибки Chromium по ресурсам внутри сайта
+:: но открывался https://www.google.ru/
+:: то есть технически url открывается в приложении в эмуляторе
+:: url можно поменять в файле app/home/home-page.xml
+
+cd %USERPROFILE%
+git clone https://github.com/alijah1981/ns-webview.git
+cd ns-webview
+call npm install
+ns run android
